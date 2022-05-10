@@ -1,4 +1,4 @@
-import React from "react";
+import React, {useState} from "react";
 
 import ExpenseDate from './ExpenseDate';
 import Card from '../UI/Card';
@@ -10,6 +10,18 @@ import './ExpenseItem.css'
 function ExpenseItem(props) {
     
     
+    // useState react hook
+    // The first element of array is a pointer to the managed value which is props.title
+    // Second element is a function we can call to set a new title, hence we called the function setTitle
+    const [title, setTitle] = useState(props.title);
+
+    const clickHandler = function () {
+
+        setTitle('Updated!')
+
+        console.log(title)
+
+    }
 
 
     return (
@@ -19,9 +31,10 @@ function ExpenseItem(props) {
             <ExpenseDate date={props.date}></ExpenseDate>
             
             <div className='expense-item__description'>
-                <h2>{props.title}</h2>
+                <h2>{title}</h2>
                 <div className='expense-item__price'>{props.amount}</div>
             </div>
+            <button onClick={clickHandler}>Change Title</button>
         </Card>
     ); 
 }
