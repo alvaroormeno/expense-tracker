@@ -1,5 +1,6 @@
 
 import ExpenseItem from './ExpenseItem';
+import Card from './Card';
 import './Expenses.css'
 
 function Expenses(props) {
@@ -12,7 +13,7 @@ function Expenses(props) {
         //  from the props parameter to the ExpenseItem compononent, we give the ExpenseItem component properties which equal to
         //  the props parameter, look for items in the props parameter, then inside items which equals the expenses array in APP.JS we look for the rest of data.
 
-        <div className="expenses">
+        <Card className="expenses">
             <ExpenseItem 
                 title={props.items[0].title} 
                 amount={props.items[0].amount} 
@@ -37,7 +38,7 @@ function Expenses(props) {
                 date={props.items[3].date}>
             </ExpenseItem>
 
-        </div>
+        </Card>
 
         
     )
