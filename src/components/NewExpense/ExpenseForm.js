@@ -2,7 +2,7 @@ import React, {useState} from "react";
 
 import './ExpenseForm.css'
 
-function ExpenseForm() {
+function ExpenseForm(props) {
 
     // - Here we have 3 different USESTATE hooks one for Title, Amount and Date. Each input inside the form has a onChange event listener
     //  which collects data from these 3 inputs and directs them to their own function which are declared under CONST (titleChangeHandler,
@@ -44,7 +44,7 @@ function ExpenseForm() {
             date: new Date(enteredDate)
         }
 
-        console.log(expenseData)
+        props.onSaveExpenseData(expenseData);
 
         setEnteredTitle('');
         setEnteredAmount('');
