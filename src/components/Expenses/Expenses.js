@@ -1,4 +1,4 @@
-import React from "react";
+import React, {useState} from "react";
 
 
 import ExpenseItem from './ExpenseItem';
@@ -8,7 +8,13 @@ import ExpensesFilter from "./ExpensesFilter";
 
 function Expenses(props) {
 
+    // filteresYear equals the UseState initial state 2020 and setFilteredYear equals to a function that states the year we want to use
+    const[filteredYear, setFilteredYear] = useState('2020')
+
     const filterChangeHandler = function(selectedYear) {
+
+        setFilteredYear(selectedYear)
+
         console.log('expense.js');
         console.log(selectedYear);
 
@@ -26,7 +32,11 @@ function Expenses(props) {
 
         
             <Card className="expenses">
-                <ExpensesFilter onChangeFilter={filterChangeHandler}/>
+                <ExpensesFilter 
+                    onChangeFilter={filterChangeHandler}
+                    // two way binding... we are creating a selected prop with the filteredYear info from use state to use it inside
+                    // ExpenseFilter componenet so each time we save the selected year returns to filteredYear
+                    selected={filteredYear}/>
                 <ExpenseItem 
                     title={props.items[0].title} 
                     amount={props.items[0].amount} 
