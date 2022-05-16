@@ -10,7 +10,7 @@ const ExpensesFilter = (props) => {
         // Here we listen to change (year selected) and call this dropdownChangeHandler function, by using (<select onChange={dropdownChangeHandler}>) 
         // we console.log(eventObject.target.value) to assure that we are listening to the right info we want which is the date selected. 
         // Tehn with props.onChangeFilter(eventObject.target.value) we are grabbing the prop onChangeFilter which is declared
-        // on the <ExpensesFilter onChangeFilter={filterChangeHandler}/> in the EXPENSE.JS file return body 
+        // on the <ExpensesFilter onChangeFilter={filterChangeHandler}/> in the EXPENSE.JS file return body.
         // This prop points to a function named filterChangeHandler declared in EXPENSE.JS file, therefore when pointing to it we are passing a parameter (eventObject.target.value). 
         // This prop with info of selected year is received on EXPENSE.JS filterChangeHandler function with a prop called by us SelectedYear.
         // this selectedYear prop carries the information passed and we then can console log it etc... 

@@ -40,6 +40,7 @@ function Expenses(props) {
 
                 {props.items.map(expense => 
                     <ExpenseItem 
+                    key={expense.id} // react needs a key to no bugs happen later, just to identify every new compononent created
                     title={expense.title} 
                     amount={expense.amount} 
                     date={expense.date}/>)}
