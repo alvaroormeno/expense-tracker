@@ -41,7 +41,7 @@ function ExpenseForm(props) {
             title: enteredTitle,
             amount: enteredAmount,
             // Here we create a NEW DATE with built in date constructor in which we pass DATE data from enteredDate
-            date: new Date(enteredDate)
+            date: new Date(enteredDate + 'T00:00:00')
         }
 
         props.onSaveExpenseData(expenseData);
