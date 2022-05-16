@@ -14,11 +14,11 @@ function Expenses(props) {
     const filterChangeHandler = function(selectedYear) {
 
         setFilteredYear(selectedYear)
+    };
 
-        console.log('expense.js');
-        console.log(selectedYear);
-
-    }
+    const filteredExpenses = props.items.filter(expense => {
+        return expense.date.getFullYear().toString() === filteredYear;
+    });
 
     return(
 
@@ -38,7 +38,7 @@ function Expenses(props) {
                     // ExpenseFilter componenet so each time we save the selected year returns to filteredYear
                     selected={filteredYear}/>
 
-                {props.items.map(expense => 
+                {filteredExpenses.map(expense => 
                     <ExpenseItem 
                     key={expense.id} // react needs a key to no bugs happen later, just to identify every new compononent created
                     title={expense.title} 
