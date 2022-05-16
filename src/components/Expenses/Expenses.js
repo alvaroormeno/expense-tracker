@@ -37,7 +37,14 @@ function Expenses(props) {
                     // two way binding... we are creating a selected prop with the filteredYear info from use state to use it inside
                     // ExpenseFilter componenet so each time we save the selected year returns to filteredYear
                     selected={filteredYear}/>
-                <ExpenseItem 
+
+                {props.items.map(expense => 
+                    <ExpenseItem 
+                    title={expense.title} 
+                    amount={expense.amount} 
+                    date={expense.date}/>)}
+
+                {/* <ExpenseItem 
                     title={props.items[0].title} 
                     amount={props.items[0].amount} 
                     date={props.items[0].date}>
@@ -59,7 +66,7 @@ function Expenses(props) {
                     title={props.items[3].title} 
                     amount={props.items[3].amount} 
                     date={props.items[3].date}>
-                </ExpenseItem>
+                </ExpenseItem> */}
 
             </Card>
         </div>
