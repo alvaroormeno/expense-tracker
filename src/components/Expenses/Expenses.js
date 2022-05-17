@@ -1,10 +1,10 @@
 import React, {useState} from "react";
 
 
-import ExpenseItem from './ExpenseItem';
 import Card from '../UI/Card';
 import './Expenses.css'
 import ExpensesFilter from "./ExpensesFilter";
+import ExpensesList from "./ExpensesList";
 
 function Expenses(props) {
 
@@ -36,14 +36,14 @@ function Expenses(props) {
                     onChangeFilter={filterChangeHandler}
                     // two way binding... we are creating a selected prop with the filteredYear info from use state to use it inside
                     // ExpenseFilter componenet so each time we save the selected year returns to filteredYear
-                    selected={filteredYear}/>
+                    selected={filteredYear}
+                />
 
-                {filteredExpenses.map(expense => 
-                    <ExpenseItem 
-                    key={expense.id} // react needs a key to no bugs happen later, just to identify every new compononent created
-                    title={expense.title} 
-                    amount={expense.amount} 
-                    date={expense.date}/>)}
+                <ExpensesList items={filteredExpenses}/>
+
+                
+
+
 
                 {/* <ExpenseItem 
                     title={props.items[0].title} 
