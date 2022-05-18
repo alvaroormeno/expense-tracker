@@ -5,6 +5,7 @@ import Card from '../UI/Card';
 import './Expenses.css'
 import ExpensesFilter from "./ExpensesFilter";
 import ExpensesList from "./ExpensesList";
+import ExpensesChart from "./ExpensesChart";
 
 function Expenses(props) {
 
@@ -38,6 +39,8 @@ function Expenses(props) {
                     // ExpenseFilter componenet so each time we save the selected year returns to filteredYear
                     selected={filteredYear}
                 />
+
+                <ExpensesChart expenses={filteredExpenses}/>
 
                 <ExpensesList items={filteredExpenses}/>
 
