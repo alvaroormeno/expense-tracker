@@ -39,7 +39,7 @@ function ExpenseForm(props) {
 
         const expenseData = {
             title: enteredTitle,
-            amount: enteredAmount,
+            amount: +enteredAmount,
             // Here we create a NEW DATE with built in date constructor in which we pass DATE data from enteredDate
             date: new Date(enteredDate + 'T00:00:00')
         }
